@@ -9,17 +9,32 @@
             </div>
         </v-ons-toolbar>
         <v-ons-card>
-
+            <div class="title">
+                Description
+            </div>
+            <div class="content">
+                {{description}}
+            </div>
         </v-ons-card>
+        <v-ons-button>
+            Save
+        </v-ons-button>
     </v-ons-page>
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
     export default {
-        name: "GymkhanaCard"
+        name: "GymkhanaCard",
+        data() {
+            return{
+                description: 'hello'
+            }
+        },
+        computed: {
+            ...mapGetters({
+
+            })
+        }
     }
 </script>
-
-<style scoped>
-
-</style>
