@@ -9,18 +9,23 @@
             </div>
         </v-ons-toolbar>
         <v-ons-card>
-            <img :src="card.img">
+            <img :src="card.img" class="img">
 
             <div class="title">
                 {{card.name}}
             </div>
             <div class="content">
-                {{card.description}}
+                Descripción: <br/>
+                <div class="description">
+                    <div class="descriptionText">
+                        {{card.description}}
+                    </div>
+                </div>
+                <v-ons-button class="startButton" >
+                    Start
+                </v-ons-button>
             </div>
         </v-ons-card>
-        <v-ons-button class="startButton" >
-            Start
-        </v-ons-button>
     </v-ons-page>
 </template>
 
@@ -36,8 +41,26 @@
 </script>
 <style>
     .startButton{
+        margin-top: 1rem !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+    .description{
+        margin-top: 1rem;
+        min-width: 2rem;
+        min-height: 3rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+        background-color: red;
+        border-radius: 1rem 1rem 1rem 1rem;
+    }
+    .descriptionText{
+        margin-left: 1rem;
+        vertical-align: middle!important;
+
+    }
+    .img{
+        max-width: 23rem;
     }
 
 </style>
