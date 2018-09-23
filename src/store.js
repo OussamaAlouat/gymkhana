@@ -3,31 +3,24 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
+
 export default new Vuex.Store({
     state: {
         pageStack: [],
-        card: {
-            name: '',
-            numberPhases: '',
-            description:'',
-            img:'',
-            level:''
-        },
-        phases: [
-            {
-            name: '',
-            description: '',
-            code: '',
-            number: ''
-            }
-        ],
-        currentPhase: {}
+        cards: [],
+        card: {},
+        phases: [],
+        currentPhase: {},
+
     },
     mutations: {
         addPageStack( state, page) {
             state.pageStack.push(page);
         },
-        setCard (state, card) {
+        setCards (state, cards) {
+            state.cards = cards;
+        },
+        setCurrentCard (state, card) {
             state.card = card;
         },
         setPhases (state, phases) {
@@ -48,16 +41,25 @@ export default new Vuex.Store({
         getPhases(state){
             return state.phases;
         },
+        getCurrentCard (state) {
+          return state.card;
+        },
         getCurrentPhase(state) {
             return state.currentPhase;
+        },
+        getCards(state) {
+            return state.cards;
         }
     },
     actions: {
         addPageStack({commit}, {page}) {
             commit('addPageStack', page);
         },
-        setCard({commit}, {card}) {
-            commit('setCard', card);
+        setCards({commit}, {cards}) {
+            commit('setCards', cards);
+        },
+        setCurrentCard({commit}, {card}) {
+            commit('setCurrentCard', card)
         },
         setPhases({commit}, {phases}) {
             commit('setPhases', phases);

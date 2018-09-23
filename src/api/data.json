@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "name": "Cumple",
+      "description": "Esta targeta se ha realizado para el cumple de una persona",
+      "level":"Medio",
+      "img":"https://www.dafont.com/img/illustration/g/y/gymkhana.png"
+    },
+    {
+      "name": "Monte",
+      "description": "Un día por el monte ",
+      "level":"Medio",
+      "img": "../photos/monte.png"
+    },
+    {
+      "name": "Mar",
+      "description": "Un día navegando por el mar",
+      "level":"Alto",
+      "img": "../photos/mar.png"
+    }
+  ],
+  "cardPhases" :[
+    {
+      "card": "Cumple",
+      "phases": [
+        {
+          "name": "phase1",
+          "description": "Sube a la montaña pequeña del puig, allí hay algo muy alto que tapa el sol.",
+          "code": "11"
+        },
+        {
+          "name": "phase2",
+          "description": "Soy algo muy pequeño y estoy en el suelo",
+          "code": "12"
+        },    {
+          "name": "phase1",
+          "description": "Me usas para limpiar el coche cuando se queda enguarrado",
+          "code": "13"
+        },    {
+          "name": "phase1",
+          "description": "te apoyas en mi cuando quieres ver a alguien",
+          "code": "14"
+        }
+      ]
+
+    }
+  ]
+}

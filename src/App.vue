@@ -8,6 +8,7 @@
 <script>
 import List from './components/GymkhanaList.vue'
 import {mapGetters, mapActions} from  'vuex'
+import  {getCards,getPhases} from './api/app.js'
 export default {
   name: 'app',
     computed: {
@@ -16,9 +17,11 @@ export default {
         })
     },
     methods: {
-        ...mapActions(['addPageStack']),
+        ...mapActions(['addPageStack','setCards']),
       start() {
-            this.addPageStack({page: List})
+            this.addPageStack({page: List});
+            this.setCards({cards: getCards})
+
       }
     },
     created() {

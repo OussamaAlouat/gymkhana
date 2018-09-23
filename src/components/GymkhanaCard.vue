@@ -9,15 +9,17 @@
             </div>
         </v-ons-toolbar>
         <v-ons-card>
+            <img :src="card.img">
+
             <div class="title">
-                Description
+                {{card.name}}
             </div>
             <div class="content">
-                {{description}}
+                {{card.description}}
             </div>
         </v-ons-card>
-        <v-ons-button>
-            Save
+        <v-ons-button class="startButton" >
+            Start
         </v-ons-button>
     </v-ons-page>
 </template>
@@ -25,16 +27,17 @@
 <script>
     import {mapGetters} from 'vuex'
     export default {
-        name: "GymkhanaCard",
-        data() {
-            return{
-                description: 'hello'
-            }
-        },
         computed: {
             ...mapGetters({
-
+                'card': 'getCurrentCard'
             })
         }
     }
 </script>
+<style>
+    .startButton{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+</style>
