@@ -4,7 +4,7 @@ const getCards = function () {
     return data.cards;
 };
 
-const getPhases = function() {
+const getPhases = function () {
     return data.cardPhases;
 };
 

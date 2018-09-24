@@ -5,7 +5,7 @@
         </v-ons-toolbar>
         <v-ons-list>
             <v-ons-list-item v-for="(card, index) in cards" :key="index"
-                    tappable @click="goToCard(card)" :class="getClass(card)">
+                             tappable @click="goToCard(card)" :class="getClass(card)">
                 <div class="left">
                     <img class="list-item__thumbnail" src="http://placekitten.com/g/40/40">
                 </div>
@@ -18,13 +18,13 @@
     </v-ons-page>
 </template>
 <script>
-    import {mapActions,mapGetters} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
     import GymkhanaCard from './GymkhanaCard.vue'
     import {db} from '../main.js'
+
     export default {
-        data () {
-            return {
-            }
+        data() {
+            return {}
         },
         computed: {
             ...mapGetters({
@@ -47,22 +47,19 @@
                 if (card.level.toLocaleLowerCase() === 'bajo')
                     return 'lowLevel';
             }
-        }/*
-        firestore() {
-            return {
-                card: db.collection('gymkhana')
-            }
-        }*/
+        }
     }
 </script>
 <style>
-    .mediumLevel{
-        background: rgba(255, 191,0,0.1);
+    .mediumLevel {
+        background: rgba(255, 191, 0, 0.1);
     }
+
     .higthLevel {
-        background: rgba(255,0,0, 0.1);
+        background: rgba(255, 0, 0, 0.1);
     }
-    .lowLevel{
-        background: rgba(0,255,128, 0.1);;
+
+    .lowLevel {
+        background: rgba(0, 255, 128, 0.1);
     }
 </style>

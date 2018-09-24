@@ -14,19 +14,19 @@ export default new Vuex.Store({
 
     },
     mutations: {
-        addPageStack( state, page) {
+        addPageStack(state, page) {
             state.pageStack.push(page);
         },
-        setCards (state, cards) {
+        setCards(state, cards) {
             state.cards = cards;
         },
-        setCurrentCard (state, card) {
+        setCurrentCard(state, card) {
             state.card = card;
         },
-        setPhases (state, phases) {
+        setPhases(state, phases) {
             state.phases = phases;
         },
-        addPhase (state, phase) {
+        addPhase(state, phase) {
             state.phases.push(phase);
         },
         setCurrentPhase(state, currentPhase) {
@@ -35,14 +35,14 @@ export default new Vuex.Store({
 
     },
     getters: {
-        getPageStack (state) {
+        getPageStack(state) {
             return state.pageStack;
         },
-        getPhases(state){
+        getPhases(state) {
             return state.phases;
         },
-        getCurrentCard (state) {
-          return state.card;
+        getCurrentCard(state) {
+            return state.card;
         },
         getCurrentPhase(state) {
             return state.currentPhase;
@@ -64,10 +64,10 @@ export default new Vuex.Store({
         setPhases({commit}, {phases}) {
             commit('setPhases', phases);
         },
-        addPhase({commit}, {phase}){
+        addPhase({commit}, {phase}) {
             commit('addPhase', phase);
         },
-        setCurrentPhase({commit}, {currentPhase}){
+        setCurrentPhase({commit}, {currentPhase}) {
             commit('setCurrentPhase', currentPhase)
         }
     }

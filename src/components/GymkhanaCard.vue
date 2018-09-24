@@ -32,7 +32,7 @@
                         </v-ons-col>
                     </v-ons-row>
                 </div>
-                <v-ons-button class="startButton" >
+                <v-ons-button class="startButton">
                     Start
                 </v-ons-button>
             </div>
@@ -42,6 +42,7 @@
 
 <script>
     import {mapGetters} from 'vuex'
+
     export default {
         computed: {
             ...mapGetters({
@@ -51,12 +52,13 @@
     }
 </script>
 <style>
-    .startButton{
+    .startButton {
         margin-top: 1rem !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
-    .description{
+
+    .description {
         text-align: center;
         vertical-align: middle;
         margin-top: 1rem;
@@ -67,20 +69,24 @@
         background-color: red;
         border-radius: 1rem 1rem 1rem 1rem;
     }
-    .descriptionText{
+
+    .descriptionText {
         margin-left: 1rem;
-        vertical-align: middle!important;
+        vertical-align: middle !important;
 
     }
-    .img{
+
+    .img {
         max-width: 23rem;
     }
-    .facil{
+
+    .facil {
         background: darkgreen;
         border-radius: 1rem 1rem 1rem 1rem;
         text-align: center;
     }
-    .medio{
+
+    .medio {
         background: yellow;
         border-radius: 1rem 1rem 1rem 1rem;
         text-align: center;
@@ -89,7 +95,8 @@
         line-height: 1.4rem;
 
     }
-    .alto{
+
+    .alto {
         background: darkred;
         border-radius: 1rem 1rem 1rem 1rem;
         text-align: center;
