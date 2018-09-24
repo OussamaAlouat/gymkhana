@@ -21,6 +21,17 @@
                         {{card.description}}
                     </div>
                 </div>
+                <br/>
+                <div>
+                    <v-ons-row>
+                        <v-ons-col width="2.5rem">
+                            <strong>Nivel</strong>
+                        </v-ons-col>
+                        <v-ons-col :class="card.level.toLocaleLowerCase()" width="3.2rem">
+                            {{card.level}}
+                        </v-ons-col>
+                    </v-ons-row>
+                </div>
                 <v-ons-button class="startButton" >
                     Start
                 </v-ons-button>
@@ -46,6 +57,8 @@
         margin-right: auto !important;
     }
     .description{
+        text-align: center;
+        vertical-align: middle;
         margin-top: 1rem;
         min-width: 2rem;
         min-height: 3rem;
@@ -62,5 +75,24 @@
     .img{
         max-width: 23rem;
     }
+    .facil{
+        background: darkgreen;
+        border-radius: 1rem 1rem 1rem 1rem;
+        text-align: center;
+    }
+    .medio{
+        background: yellow;
+        border-radius: 1rem 1rem 1rem 1rem;
+        text-align: center;
+        height: 1.5rem;
+        vertical-align: middle !important;
+        line-height: 1.4rem;
 
+    }
+    .alto{
+        background: darkred;
+        border-radius: 1rem 1rem 1rem 1rem;
+        text-align: center;
+
+    }
 </style>

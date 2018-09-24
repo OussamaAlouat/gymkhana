@@ -5,7 +5,7 @@
         </v-ons-toolbar>
         <v-ons-list>
             <v-ons-list-item v-for="(card, index) in cards" :key="index"
-                    tappable @click="goToCard(card)">
+                    tappable @click="goToCard(card)" :class="getClass(card)">
                 <div class="left">
                     <img class="list-item__thumbnail" src="http://placekitten.com/g/40/40">
                 </div>
@@ -38,6 +38,14 @@
                 this.setCurrentCard({card: card});
                 this.addPageStack({page: GymkhanaCard})
 
+            },
+            getClass(card) {
+                if (card.level.toLocaleLowerCase() === 'medio')
+                    return 'mediumLevel';
+                if (card.level.toLocaleLowerCase() === 'alto')
+                    return 'higthLevel';
+                if (card.level.toLocaleLowerCase() === 'bajo')
+                    return 'lowLevel';
             }
         }/*
         firestore() {
@@ -47,3 +55,14 @@
         }*/
     }
 </script>
+<style>
+    .mediumLevel{
+        background: rgba(255, 191,0,0.1);
+    }
+    .higthLevel {
+        background: rgba(255,0,0, 0.1);
+    }
+    .lowLevel{
+        background: rgba(0,255,128, 0.1);;
+    }
+</style>
