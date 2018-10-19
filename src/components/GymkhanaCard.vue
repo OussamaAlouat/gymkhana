@@ -9,7 +9,7 @@
             </div>
         </v-ons-toolbar>
         <v-ons-card>
-            <img :src="card.img" class="img">
+            <img :src="card.img" class="img" align="center">
 
             <div class="title">
                 {{card.name}}
@@ -32,7 +32,7 @@
                         </v-ons-col>
                     </v-ons-row>
                 </div>
-                <v-ons-button class="startButton">
+                <v-ons-button class="startButton" @click="goToSteps()">
                     Start
                 </v-ons-button>
             </div>
@@ -41,13 +41,19 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex'
-
+    import {mapGetters, mapActions} from 'vuex'
+    import Phase from  './Phase.vue'
     export default {
         computed: {
             ...mapGetters({
                 'card': 'getCurrentCard'
             })
+        },
+        methods: {
+            ...mapActions(['addPageStack']),
+            goToSteps() {
+                this.addPageStack({page: Phase})
+            }
         }
     }
 </script>

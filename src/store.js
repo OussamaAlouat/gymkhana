@@ -8,10 +8,10 @@ export default new Vuex.Store({
     state: {
         pageStack: [],
         cards: [],
-        card: {},
-        phases: [],
+        currentCard: {},
+        currentPhaseIndex: 0,
         currentPhase: {},
-
+        lastPhase: false
     },
     mutations: {
         addPageStack(state, page) {
@@ -21,16 +21,17 @@ export default new Vuex.Store({
             state.cards = cards;
         },
         setCurrentCard(state, card) {
-            state.card = card;
+            state.currentCard = card;
         },
-        setPhases(state, phases) {
-            state.phases = phases;
+        setNextPhaseIndex(state) {
+            if (state.currentPhaseIndex < state.currentCard.phases.length - 1) {
+                state.currentPhaseIndex = state.currentPhaseIndex + 1
+            } else {
+                this.commit('setLastPhase')
+            }
         },
-        addPhase(state, phase) {
-            state.phases.push(phase);
-        },
-        setCurrentPhase(state, currentPhase) {
-            state.currentPhase = currentPhase;
+        setLastPhase (state) {
+            state.lastPhase = true;
         }
 
     },
@@ -38,17 +39,18 @@ export default new Vuex.Store({
         getPageStack(state) {
             return state.pageStack;
         },
-        getPhases(state) {
-            return state.phases;
-        },
         getCurrentCard(state) {
-            return state.card;
-        },
-        getCurrentPhase(state) {
-            return state.currentPhase;
+            return state.currentCard;
         },
         getCards(state) {
             return state.cards;
+        },
+        getPhase(state) {
+            state.currentPhase = state.currentCard.phases[state.currentPhaseIndex];
+            return state.currentPhase;
+        },
+        isLastPhase(state) {
+            return state.lastPhase
         }
     },
     actions: {
@@ -61,14 +63,8 @@ export default new Vuex.Store({
         setCurrentCard({commit}, {card}) {
             commit('setCurrentCard', card)
         },
-        setPhases({commit}, {phases}) {
-            commit('setPhases', phases);
-        },
-        addPhase({commit}, {phase}) {
-            commit('addPhase', phase);
-        },
-        setCurrentPhase({commit}, {currentPhase}) {
-            commit('setCurrentPhase', currentPhase)
+        setNextPhaseIndex ({commit}) {
+            commit('setNextPhaseIndex')
         }
     }
 })
