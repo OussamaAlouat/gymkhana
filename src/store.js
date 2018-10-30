@@ -25,12 +25,11 @@ export default new Vuex.Store({
         },
         setNextPhaseIndex(state) {
             if (state.currentPhaseIndex < state.currentCard.phases.length - 1) {
-                state.currentPhaseIndex = state.currentPhaseIndex + 1
-            } else {
-                this.commit('setLastPhase')
+                state.currentPhaseIndex = state.currentPhaseIndex + 1;
+                if (state.currentPhaseIndex === state.currentCard.phases.length - 1) this.commit('setLastPhase')
             }
         },
-        setLastPhase (state) {
+        setLastPhase(state) {
             state.lastPhase = true;
         }
 
@@ -63,7 +62,7 @@ export default new Vuex.Store({
         setCurrentCard({commit}, {card}) {
             commit('setCurrentCard', card)
         },
-        setNextPhaseIndex ({commit}) {
+        setNextPhaseIndex({commit}) {
             commit('setNextPhaseIndex')
         }
     }

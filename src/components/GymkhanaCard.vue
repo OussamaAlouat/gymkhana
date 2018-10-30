@@ -9,13 +9,12 @@
             </div>
         </v-ons-toolbar>
         <v-ons-card>
-            <img :src="card.img" class="img" align="center">
+            <img :src="card.img" class="img" width="100%">
 
             <div class="title">
                 {{card.name}}
             </div>
             <div class="content">
-                Descripción: <br/>
                 <div class="description">
                     <div class="descriptionText">
                         {{card.description}}
@@ -32,9 +31,11 @@
                         </v-ons-col>
                     </v-ons-row>
                 </div>
-                <v-ons-button class="startButton" @click="goToSteps()">
-                    Start
-                </v-ons-button>
+                <div style="text-align: center">
+                    <v-ons-button  class="startButton" @click="goToSteps()">
+                        Start
+                    </v-ons-button>
+                </div>
             </div>
         </v-ons-card>
     </v-ons-page>
@@ -42,7 +43,8 @@
 
 <script>
     import {mapGetters, mapActions} from 'vuex'
-    import Phase from  './Phase.vue'
+    import Phase from './Phase.vue'
+
     export default {
         computed: {
             ...mapGetters({
